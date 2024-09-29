@@ -1,0 +1,41 @@
+/* TARGET_
+----------------------------------------------------------------------------------------
+
+   Project: CCore 5.01
+
+   License: Boost Software License - Version 1.0 - August 17th, 2003
+
+            see http://www.boost.org/LICENSE_1_0.txt or the local copy
+
+   Copyright (c) 2024 Sergey Strukov. All rights reserved.
+
+--------------------------------------------------------------------------------------*/
+
+lib Main : 
+
+INC = WIN64
+      ../HCore
+      ../Simple
+      ../Fundamental
+      ../Applied
+      ../Desktop/App
+      ../Desktop/Core
+      ../Desktop/Draw
+      ../Desktop/Font
+      ../Desktop/Lib
+      ../Desktop/Tools
+
+SRC = ../Simple/CCore/src
+      ../Fundamental/CCore/src
+      ../Applied/CCore/src
+      ../Desktop/App/CCore/src
+      ../Desktop/Core/CCore/src
+      ../Desktop/Draw/CCore/src
+      ../Desktop/Font/CCore/src
+      ../Desktop/Lib/CCore/src
+      ../Desktop/Tools/CCore/src
+      ../HCore/CCore/src
+      WIN64/CCore/src
+
+OUT = CCore.a
+

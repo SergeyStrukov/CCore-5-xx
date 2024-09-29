@@ -1,0 +1,94 @@
+# Makefile-tools
+#-------------------------------------------------------------------------------
+#
+#  Project: LightForge 1.00
+#
+#  License: Boost Software License - Version 1.0 - August 17th, 2003
+#
+#            see http://www.boost.org/LICENSE_1_0.txt or the local copy
+#
+#  Copyright (c) 2024 Sergey Strukov. All rights reserved.
+#
+#-------------------------------------------------------------------------------
+
+CCOPT_EXTRA ?=
+
+ASOPT_EXTRA ?=
+
+LDOPT_EXTRA ?=
+
+TARGET_DESKTOP ?= no
+
+# tools ------------------------------------------------------------------------
+
+ECHO = /usr/bin/echo
+
+FIND = /usr/bin/find
+
+CAT_ = /usr/bin/cat
+
+CC_ = g++
+
+AS_ = as
+
+AR_ = ar
+
+RM_ = rm -f
+
+DATE_ = /usr/bin/date
+
+MKDIR_ = mkdir -p
+
+#-------------------------------------------------------------------------------
+
+CAT = @$(ECHO) CAT ; $(CAT_)
+
+CC = @$(ECHO) CC $< ; $(CC_)
+
+LD = @$(ECHO) LD $@ ; $(CC_)
+
+AS = @$(ECHO) AS $< ; $(AS_)
+
+AR = @$(ECHO) AR $@ ; $(AR_)
+
+RM = @$(ECHO) RM ; $(RM_)
+
+DATE = @$(ECHO) DATE ; $(DATE_)
+
+MKDIR = @$(ECHO) MKDIR ; $(MKDIR_)
+
+# options ----------------------------------------------------------------------
+
+NOWARN = -Wno-non-virtual-dtor \
+         -Wno-switch \
+         -Wno-type-limits \
+         -Wno-enum-compare \
+         -Wno-missing-field-initializers \
+         -Wno-delete-non-virtual-dtor \
+         -Wno-misleading-indentation \
+         -Wno-inaccessible-base \
+         -Wno-array-bounds \
+
+
+CCINC = -I/usr/include/freetype2
+
+CCCPU = -march=native
+
+CCOPT = -c -std=c++20 -fwrapv -fconcepts-diagnostics-depth=3 -O3 $(CCCPU) -Wall -Wextra $(NOWARN) $(CCINC) $(CCOPT_EXTRA)
+
+ASOPT = $(ASOPT_EXTRA)
+
+ifeq ($(TARGET_DESKTOP),yes)
+
+LDOPT_DESKTOP = -Wl,--subsystem,windows
+
+else
+
+LDOPT_DESKTOP =
+
+endif
+
+LDOPT = -Wl,-s $(LDOPT_DESKTOP) $(LDOPT_EXTRA) -lws2_32 -lgmp -lgdi32 -lfreetype
+
+#-------------------------------------------------------------------------------
+

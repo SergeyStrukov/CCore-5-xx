@@ -1,0 +1,124 @@
+/* HCore.global.txt */
+
+DefaultRefArrayHeader::DefaultObject
+
+DefaultDynArrayHeader::DefaultObject
+
+DefaultCollectorHeader::DefaultObject
+
+DefaultAtomicRefArrayHeader::DefaultObject
+
+AbortMsgFunc
+
+PacketPool_PacketCount
+
+PacketPool_PacketMaxDataLen
+
+SmallPrimes
+
+CCORE_INITPRI_0
+ {
+  Sys::Atomic
+
+  Sys::ConWrite()
+
+  Sys::AbortProcess()
+
+  PlanInit list
+
+  CCORE_INITPRI_1
+   {
+    String::StaticObject<CC...> String::StaticObject<CC...>::Object;
+
+    PlanInit nodes
+
+    TaskEventHost
+
+    CCORE_INITPRI_2
+     {
+      PlanInit
+
+       Sys
+       Exception
+       Scope
+       TaskMemStack
+       DeferCall
+       PerTask
+       TaskCore
+       MemBase
+       TypeNumber
+       JobHost
+       PacketPool
+       ObjHost
+       CCore
+
+       Incremental // Desktop
+
+      CCORE_INITPRI_3
+       {
+        template <class T>
+        typename TypeNumberOf<T>::Init TypeNumberOf<T>::Number;
+
+        template <class TOC>
+        PerTask::SlotId PerTask::TaskObjectSlotId<TOC>::Id;
+
+        template <uint8 K>
+        typename ConvolutionMulConst<K>::TableInit ConvolutionMulConst<K>::Table;
+
+        template <uint8 ... KK>
+        const ConvolutionMul ConvolutionParam<KK...>::Mul[Len];
+
+        DestroyPerTask ForMainTask;
+
+        DDL::CharProp DDL::CharProp::Object;
+
+        NullAbstFileToRead Object;
+
+        --------------
+
+        DefaultDesktopPtr DefaultDesktop;
+
+        AliveControl AliveControl::Default;
+
+        DefFont Object;
+
+        DefInfo Object;
+
+        DefComboInfo ComboObject;
+
+        DefPicture DefObject;
+
+        EmptyPicture Object;
+
+        DefBoss Object;
+
+        DefList Object;
+
+        AutoGlobal<CharMapTable> CharMapHook::Object;
+
+        AutoGlobal<FreeTypeFont::Global> FreeTypeFont::Inner::Object;
+
+        BookMap::Pretext BookMap::Pretext::Object;
+
+        --------------
+
+        GlobalObjects
+         {
+          template <RegisterEventType T>
+          EventTypeIdNode EventTypeId<T>::Node;
+
+          template <EventType T>
+          EventIdNode EventId<T>::Node;
+
+          *
+
+          main
+           {
+           }
+         }
+       }
+     }
+   }
+ }
+
+

@@ -1,0 +1,20 @@
+/* Hack.txt */
+
+==================================================
+
+<compare>
+
+  class strong_ordering
+  {
+    __cmp_cat::type _M_value;
+
+    ....
+
+    // ops
+
+    constexpr explicit operator int() const { return _M_value; }
+
+    ....
+  };
+
+==================================================
