@@ -164,7 +164,7 @@ class ZStr : NoCopy
 
    ~ZStr()
     {
-     delete str;
+     delete[] str;
     }
 
    operator const char * () const { return str; }
@@ -189,7 +189,7 @@ class WStr : NoCopy
 
    ~WStr()
     {
-     delete wstr;
+     delete[] wstr;
     }
 
    operator const wchar_t * () const { return wstr; }

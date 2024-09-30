@@ -60,7 +60,7 @@ Format DefaultCollapseFormat = { .font = &font_collapse , .back = 0D0D0D0h } ;
 
 // ---
 
-Page page = { "page1" , { 
+Page page = { "page1" , {
                          { .body = &t1 , .line = &line1 , .col = 0FF0000h },
                          { .body = &t2 , .line = &line1 , .col = 00000FFh },
                          { .body = &t3 , .line = &line1 , .col = 0008000h },
@@ -69,8 +69,9 @@ Page page = { "page1" , {
                          { .body = &t6 , .line = &line2 },
                          { .body = &t7 , .line = &line2 },
                          { .body = &table1 , .line = &line2 },
-                         { .body = &t8 , .line = &line2 }
-                          
+                         { .body = &t8 , .line = &line2 },
+                         { .body = &bmp1 , .line = &line2 }
+
                         } , 0C0C0C0h , 0h , null , null , &Page2#page } ;
 
 SingleLine line1 = { {2,1} , 0FF00h } ;
@@ -86,12 +87,12 @@ Text t2 = { {
              { 'aligned right' }
 
             } , &fmt , &pl_right } ;
-            
+
 Text t3 = { {
              { 'aligned center' }
 
             } , &fmt , &pl_center } ;
-            
+
 Text t4 = { {
               {"The"}
              ,{"spinor",&fmt_i}
@@ -150,8 +151,8 @@ Text t4 = { {
              ,{"usually"}
              ,{"Blue",&fmt_b}
              ,{"."}
-             
-            } , &fmt , &pl_1_0 } ;            
+
+            } , &fmt , &pl_1_0 } ;
 
 Text t5 = { {
 
@@ -272,7 +273,7 @@ Text t5 = { {
              ,{"part."}
 
             } , &fmt , &pl_1_5 } ;
-            
+
 FixedText t6 = { {
                   {{'struct',&fmt_code_keyword},{' NoCopyType'}},
                   {{' {'}},
@@ -284,12 +285,12 @@ FixedText t6 = { {
                   {{' };'}}
 
                  } , &fmt_code } ;
-                 
+
 TextList t7 = { {
                  { '1)' , {{ .body = &i1 , .inner = {5,5} , .outer = {0,0} }} },
                  { '2)' , {{ .body = &i2 , .inner = {5,5} , .outer = {0,0} }} },
                  { '3)' , {{ .body = &i3 , .inner = {5,5} , .outer = {0,0} }} },
-                 
+
                  { '4)->' , {{ .body = &i4 , .inner = {0,0} , .outer = {0,0} }} },
                  { '5)->' , {{ .body = &i5 , .inner = {0,0} , .outer = {0,0} }} },
                  { '6)->' , {{ .body = &i6 , .inner = {0,0} , .outer = {0,0} }} }
@@ -297,48 +298,48 @@ TextList t7 = { {
 
                 } , &fmt_bullet , 5 , 5 } ;
 
-                
+
 Text i1 = { {
              {"aligned left",null,&link1}
 
-            } , &fmt , &pl_item } ;     
-            
+            } , &fmt , &pl_item } ;
+
 Link link1 = { &page } ;
-                        
+
 Text i2 = { {
              {"aligned right",null,&link2}
 
-            } , &fmt , &pl_item } ;     
-            
+            } , &fmt , &pl_item } ;
+
 Link link2 = { &page , { 1 } } ;
 
 Text i3 = { {
              {"aligned center",null,&link3}
 
-            } , &fmt , &pl_item } ;     
-            
+            } , &fmt , &pl_item } ;
+
 Link link3 = { &page , { 2 } } ;
 
 
 Text i4 = { {
              {"aligned left",null,&link4}
 
-            } , &fmt , &pl_item } ;     
-            
+            } , &fmt , &pl_item } ;
+
 Link link4 = { &Page2#page , { 0 } } ;
-                        
+
 Text i5 = { {
              {"aligned right",null,&link5}
 
-            } , &fmt , &pl_item } ;     
-            
+            } , &fmt , &pl_item } ;
+
 Link link5 = { &Page2#page , { 1 } } ;
 
 Text i6 = { {
              {"aligned center",null,&link6}
 
-            } , &fmt , &pl_item } ;     
-            
+            } , &fmt , &pl_item } ;
+
 Link link6 = { &Page2#page , { 2 } } ;
 
 Collapse t8 = { .title = 'hidden text' , .list = {
@@ -348,22 +349,24 @@ Collapse t8 = { .title = 'hidden text' , .list = {
                                                   { .body = &t3 , .line = &line2 , .col = 0008000h },
                                                   { .body = &t9 , .line = &line2 },
                                                   { .body = &t10 , .line = &line2 }
-  
+
                                                  } , .open = True , .hide = False } ;
 
 Collapse t9 = { .title = 'hidden text' , .list = {
 
                                                   { .body = &t1 , .line = &line2 , .col = 0FF0000h }
-  
+
                                                  } , .open = True } ;
-                                                 
+
 Collapse t10 = { .title = 'hidden text' , .list = {
 
                                                    { .body = &t1 , .line = &line2 , .col = 0FF0000h }
-  
+
                                                   } , .open = False } ;
 
 Border tb1 = { .space = 5 , .line = 0008000h } ;
+
+Bitmap bmp1 = { "portret.bitmap" } ;
 
 Table table1 = { { 25 , 25 , 50 } , {
                                      {&Cell#c1_1,&Cell#c1_2,&Cell#c1_3},
@@ -371,13 +374,13 @@ Table table1 = { { 25 , 25 , 50 } , {
                                      {&Cell#c3_1,&Cell#c3_2,&Cell#c3_3},
                                      {&Cell#c4_1,&Cell#c4_2,&Cell#c4_3}
                                     } , &tb1 , True } ;
-                                
-scope Cell {                                
-              
+
+scope Cell {
+
 Point DefaultInner = { 5 , 5 } ;
 
 Point DefaultOuter = { 0 , 0 } ;
-                                
+
 Cell c1_1 = { {{&t1_1}} } ;
 Cell c1_2 = { {{&t1_2}} } ;
 Cell c1_3 = { {{&t1_3}} } ;
@@ -426,8 +429,8 @@ Text t4_2 = { { {'int'} } } ;
 
 Text t4_3 = { { {'+'},{'-'} } } ;
 
-} // scope Cell                               
-                                                 
+} // scope Cell
+
 } // scope Page1
 
 /* Page2 */
@@ -446,12 +449,12 @@ OneLine pl_center = { OneLine#Center } ;
 
 // ---
 
-Page page = { "page2" , { 
+Page page = { "page2" , {
                          { .body = &t1 , .line = &line1 , .col = 0FF0000h },
                          { .body = &t2 , .line = &line1 , .col = 00000FFh },
                          { .body = &t3 , .line = &line1 , .col = 0008000h },
                          { .body = &t4 , .line = &line2 }
-                          
+
                         } , NoColor , NoColor , null , &Page1#page , null } ;
 
 DoubleLine line1 = { {1,1} } ;
@@ -467,7 +470,7 @@ Text t2 = { {
              { 'aligned right' }
 
             } , &fmt , &pl_right } ;
-            
+
 Text t3 = { {
              { 'aligned center' }
 
@@ -483,9 +486,9 @@ Collapse t4 = { .title = 'hidden page' , .list = {
                                                    { .body = &Page1#t7 , .line = &line2 },
                                                    { .body = &Page1#t8 , .line = &line2 },
                                                    { .body = &Page1#table1 , .line = &line2 }
-  
+
                                                  } , .open = False } ;
-                                                  
+
 } // scope Page2
 
 
