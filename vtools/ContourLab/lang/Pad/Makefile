@@ -11,7 +11,9 @@
 #
 #----------------------------------------------------------------------------------------
 
-LANG = $(HOME)/bin/CCore-CondLangLR1.exe
+LIGHT_FORGE ?= ~/LightForge
+
+LANG = $(LIGHT_FORGE)/build/ccore/CCore/CondLangLR1/CCore-CondLangLR1.exe
 
 run:
 	$(LANG) Pad.lang

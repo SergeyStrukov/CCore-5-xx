@@ -11,9 +11,11 @@
 #
 #----------------------------------------------------------------------------------------
 
-LANG = $(HOME)/bin/CCore-CondLangLR1.exe
+LIGHT_FORGE ?= ~/LightForge
 
-GEN = $(HOME)/bin/CCore-ParserGen.exe
+LANG = $(LIGHT_FORGE)/build/ccore/CCore/CondLangLR1/CCore-CondLangLR1.exe
+
+GEN = $(LIGHT_FORGE)/build/ccore/CCore/ParserGen/CCore-ParserGen.exe
 
 run:
 	$(LANG) Formula.lang

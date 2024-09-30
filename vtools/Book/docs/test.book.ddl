@@ -70,7 +70,8 @@ Page page = { "page1" , {
                          { .body = &t7 , .line = &line2 },
                          { .body = &table1 , .line = &line2 },
                          { .body = &t8 , .line = &line2 },
-                         { .body = &bmp1 , .line = &line2 }
+                         { .body = &bmp1 , .line = &line2 },
+                         { .body = &bmp2 , .line = &line2 }
 
                         } , 0C0C0C0h , 0h , null , null , &Page2#page } ;
 
@@ -367,6 +368,8 @@ Collapse t10 = { .title = 'hidden text' , .list = {
 Border tb1 = { .space = 5 , .line = 0008000h } ;
 
 Bitmap bmp1 = { "portret.bitmap" } ;
+
+Bitmap bmp2 = { "Mandelbrot.zipmap" } ;
 
 Table table1 = { { 25 , 25 , 50 } , {
                                      {&Cell#c1_1,&Cell#c1_2,&Cell#c1_3},
