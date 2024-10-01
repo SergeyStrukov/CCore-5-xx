@@ -17,6 +17,8 @@ TypeSet = $(LIGHT_FORGE)/build/ccore/CCore/DDLTypeSet/CCore-DDLTypeSet.exe
 
 MakeString = $(LIGHT_FORGE)/build/ccore/CCore/MakeString/CCore-MakeString.exe
 
+all: src/AppState.TypeDef.gen.h src/AppState.Pretext.gen.h src/Aspect.TypeDef.gen.h src/Aspect.Pretext.gen.h
+
 src/AppState.TypeDef.gen.h : src/AppState.ddl
 	$(TypeSet) src/AppState.ddl src/AppState.TypeDef.gen.h src/AppState.TypeSet.gen.h
 

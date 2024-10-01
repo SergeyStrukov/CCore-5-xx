@@ -17,6 +17,8 @@ TypeSet = $(LIGHT_FORGE)/build/ccore/CCore/DDLTypeSet/CCore-DDLTypeSet.exe
 
 MakeString = $(LIGHT_FORGE)/build/ccore/CCore/MakeString/CCore-MakeString.exe
 
+all: src/Contour.TypeDef.gen.h src/Contour.Pretext.gen.h
+
 src/Contour.TypeDef.gen.h : src/Contour.ddl
 	$(TypeSet) src/Contour.ddl src/Contour.TypeDef.gen.h src/Contour.TypeSet.gen.h
 
