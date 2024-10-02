@@ -1,7 +1,7 @@
-# Makefile-runopt
+# Makefile
 #----------------------------------------------------------------------------------------
 #
-#  Project: CCore 5.01
+#  Project: PTPServer 1.00
 #
 #  License: Boost Software License - Version 1.0 - August 17th, 2003
 #
@@ -11,5 +11,12 @@
 #
 #----------------------------------------------------------------------------------------
 
-RUN_OPT = $(TARGET_ROOT)/docs/test.book.ddl
+LIGHT_FORGE ?= ~/LightForge
+
+Server = $(LIGHT_FORGE)/build/ccore/CCore/PTPServer/CCore-PTPServer.exe
+
+.PHONY : run
+
+run:
+	$(Server)
 

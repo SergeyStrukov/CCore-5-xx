@@ -13,7 +13,7 @@
 
 exe ParserGen : Main
 
-INC = .
+INC =
 
 SRC = src
 

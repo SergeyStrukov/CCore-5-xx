@@ -13,7 +13,7 @@
 
 exe Zipmap : Main
 
-INC = .
+INC =
 
 SRC = src
 

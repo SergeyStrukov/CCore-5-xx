@@ -11,11 +11,11 @@
 
 --------------------------------------------------------------------------------------*/
 
-exe Keywords : Main
+exe PTPServer : PTPServerProc
 
 INC =
 
 SRC = src
 
-OUT = CCore-Keywords.exe
+OUT = CCore-PTPServer.exe
 

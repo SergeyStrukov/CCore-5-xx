@@ -21,6 +21,6 @@ WIN64:
 	$(LIGHT_FORGE)/manager.exe add . ccore
 
 delete:
-	$(LIGHT_FORGE)/manager.exe del .
+	$(LIGHT_FORGE)/manager.exe del . ccore
 
 

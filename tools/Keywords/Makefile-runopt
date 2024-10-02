@@ -11,5 +11,5 @@
 #
 #----------------------------------------------------------------------------------------
 
-RUN_OPT = ../$(PROJECT_PATH)/$(TARGET_PATH)/keywords.ddl out/keywords.gen.cpp
+RUN_OPT = $(TARGET_ROOT)/files/keywords.ddl out/keywords.gen.cpp
 

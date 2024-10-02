@@ -1,7 +1,7 @@
 # Makefile-runopt
 #----------------------------------------------------------------------------------------
 #
-#  Project: CCore 5.01
+#  Project: MakeString 1.00
 #
 #  License: Boost Software License - Version 1.0 - August 17th, 2003
 #
@@ -11,5 +11,7 @@
 #
 #----------------------------------------------------------------------------------------
 
-RUN_OPT = $(TARGET_ROOT)/docs/test.book.ddl
+RUN_OPT = $(TARGET_ROOT)/files/sample.ddl
+
+
 

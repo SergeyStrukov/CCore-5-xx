@@ -1,7 +1,7 @@
-# Makefile-runopt
+# Makefile
 #----------------------------------------------------------------------------------------
 #
-#  Project: CCore 5.01
+#  Project: PTPSecureServer 1.00
 #
 #  License: Boost Software License - Version 1.0 - August 17th, 2003
 #
@@ -11,5 +11,11 @@
 #
 #----------------------------------------------------------------------------------------
 
-RUN_OPT = $(TARGET_ROOT)/docs/test.book.ddl
+LIGHT_FORGE ?= ~/LightForge
 
+TypeSet = $(LIGHT_FORGE)/build/ccore/CCore/DDLTypeSet/CCore-DDLTypeSet.exe
+
+.PHONY : ddl
+
+ddl:
+	$(TypeSet) src/PTPSecureConfig.types.ddl inc/Config.type.h src/Config.typeset.h

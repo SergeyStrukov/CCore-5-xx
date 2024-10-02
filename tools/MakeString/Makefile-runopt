@@ -11,5 +11,5 @@
 #
 #----------------------------------------------------------------------------------------
 
-RUN_OPT = -s ../$(PROJECT_PATH)/$(TARGET_PATH)/Book1.ddl out/Book1.gen.h
+RUN_OPT = -s $(TARGET_ROOT)/files/Book1.ddl out/Book1.gen.h
 

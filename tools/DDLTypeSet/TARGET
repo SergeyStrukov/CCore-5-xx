@@ -13,7 +13,7 @@
 
 exe DDLTypeSet : Main
 
-INC = .
+INC =
 
 SRC = src
 

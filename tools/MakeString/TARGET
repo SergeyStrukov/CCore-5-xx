@@ -13,7 +13,7 @@
 
 exe MakeString : Main
 
-INC = .
+INC =
 
 SRC = src
 
