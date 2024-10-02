@@ -213,7 +213,10 @@ struct ArrayBase
 
     ulen len=ptr->len;
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wstringop-overread"
     Algo::MoveTo(GetPtr(ptr),len,PlaceAt(ret)+Delta);
+#pragma GCC diagnostic pop
 
     ret->len=len;
 

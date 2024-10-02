@@ -27,6 +27,9 @@ template <class Algo> struct FFTMul;
 
 /* struct FFTMul<Algo> */
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wstringop-overflow="
+
 template <class Algo>
 struct FFTMul
  {
@@ -593,6 +596,8 @@ struct FFTMul
     InternalUMul(d,N,K,c,a,b,nab,temp);
    }
  };
+
+#pragma GCC diagnostic pop
 
 } // namespace Math
 } // namespace CCore
