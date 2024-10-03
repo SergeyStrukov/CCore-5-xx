@@ -27,9 +27,6 @@ template <class Algo> struct FFTMul;
 
 /* struct FFTMul<Algo> */
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wstringop-overflow="
-
 template <class Algo>
 struct FFTMul
  {
@@ -225,7 +222,7 @@ struct FFTMul
 
 #endif
       {
-       Algo::Copy(A,P,T-1);
+       if( T>1 ) Algo::Copy(A,P,T-1); // TODO
 
        Unit c=UAdd(A,T-1,P+2*(T-1),2);
        Unit b=Algo::USub(A,P+(T-1),T-1);
@@ -320,11 +317,11 @@ struct FFTMul
       {
        a[T]=Algo::ULShift(a,T,shift);
 
-       Algo::Null(a+T+1,T-delta-1);
+       if( T>delta+1 ) Algo::Null(a+T+1,T-delta-1); // TODO
       }
     else
       {
-       Algo::Null(a+T,T-delta);
+       if( T>delta ) Algo::Null(a+T,T-delta); // TODO
       }
 
     Mod(N,T,A,P);
@@ -427,6 +424,7 @@ struct FFTMul
          }
       }
    }
+
 
   static void Fill(ulen N,ulen K,ulen T,Unit *A,const Unit *a,ulen na)
    {
@@ -596,8 +594,6 @@ struct FFTMul
     InternalUMul(d,N,K,c,a,b,nab,temp);
    }
  };
-
-#pragma GCC diagnostic pop
 
 } // namespace Math
 } // namespace CCore

@@ -26,6 +26,8 @@ namespace App {
 
 namespace Private_3036 {
 
+static_assert( Math::IntegerFastAlgo::UnitBits==64 ,"CCore::IntegerFastAlgo : bad gmp limb size");
+
 /* struct BaseAlgo */
 
 constexpr unsigned Log(unsigned n)
