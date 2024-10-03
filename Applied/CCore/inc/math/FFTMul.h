@@ -304,7 +304,7 @@ struct FFTMul
 
     Unit *P=temp;
 
-    ulen delta=s/UnitBits;
+    ulen delta=s/UnitBits; // delta<T
     unsigned shift=unsigned( s%UnitBits );
 
     Algo::Null(P,delta);
