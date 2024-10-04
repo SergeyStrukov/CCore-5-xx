@@ -11,18 +11,18 @@
 #
 #----------------------------------------------------------------------------------------
 
-LIGHT_FORGE ?= ~/LightForge
+TypeSet = $(LIGHT_FORGE_BUILD)/CCore/DDLTypeSet/CCore-DDLTypeSet.exe
 
-TypeSet = $(LIGHT_FORGE)/build/ccore/CCore/DDLTypeSet/CCore-DDLTypeSet.exe
+MakeString = $(LIGHT_FORGE_BUILD)/CCore/MakeString/CCore-MakeString.exe
 
-MakeString = $(LIGHT_FORGE)/build/ccore/CCore/MakeString/CCore-MakeString.exe
+SRC = ../src
 
-all: src/Contour.TypeDef.gen.h src/Contour.Pretext.gen.h
+all: $(SRC)/Contour.TypeDef.gen.h $(SRC)/Contour.Pretext.gen.h
 
-src/Contour.TypeDef.gen.h : src/Contour.ddl
-	$(TypeSet) src/Contour.ddl src/Contour.TypeDef.gen.h src/Contour.TypeSet.gen.h
+$(SRC)/Contour.TypeDef.gen.h : Contour.ddl
+	$(TypeSet) Contour.ddl $(SRC)/Contour.TypeDef.gen.h $(SRC)/Contour.TypeSet.gen.h
 
-src/Contour.Pretext.gen.h : src/Contour.ddl
-	$(MakeString) -s src/Contour.ddl src/Contour.Pretext.gen.h
+$(SRC)/Contour.Pretext.gen.h : Contour.ddl
+	$(MakeString) -s Contour.ddl $(SRC)/Contour.Pretext.gen.h
 
 #----------------------------------------------------------------------------------------

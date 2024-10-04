@@ -11,18 +11,18 @@
 #
 #----------------------------------------------------------------------------------------
 
-LIGHT_FORGE ?= ~/LightForge
+TypeSet = $(LIGHT_FORGE_BUILD)/CCore/DDLTypeSet/CCore-DDLTypeSet.exe
 
-TypeSet = $(LIGHT_FORGE)/build/ccore/CCore/DDLTypeSet/CCore-DDLTypeSet.exe
+MakeString = $(LIGHT_FORGE_BUILD)/CCore/MakeString/CCore-MakeString.exe
 
-MakeString = $(LIGHT_FORGE)/build/ccore/CCore/MakeString/CCore-MakeString.exe
+SRC = ../src
 
-all: src/AppState.TypeDef.gen.h src/AppState.Pretext.gen.h
+all: $(SRC)/AppState.TypeDef.gen.h $(SRC)/AppState.Pretext.gen.h
 
-src/AppState.TypeDef.gen.h : src/AppState.ddl
-	$(TypeSet) src/AppState.ddl src/AppState.TypeDef.gen.h src/AppState.TypeSet.gen.h
+$(SRC)/AppState.TypeDef.gen.h : AppState.ddl
+	$(TypeSet) AppState.ddl $(SRC)/AppState.TypeDef.gen.h $(SRC)/AppState.TypeSet.gen.h
 
-src/AppState.Pretext.gen.h : src/AppState.ddl
-	$(MakeString) -s src/AppState.ddl src/AppState.Pretext.gen.h
+$(SRC)/AppState.Pretext.gen.h : AppState.ddl
+	$(MakeString) -s AppState.ddl $(SRC)/AppState.Pretext.gen.h
 
 #----------------------------------------------------------------------------------------

@@ -11,7 +11,7 @@
 
 --------------------------------------------------------------------------------------*/
 
-exe ContourLab : Main
+exe ContourLab : Main ContourDDL
 
 INC = .
 
