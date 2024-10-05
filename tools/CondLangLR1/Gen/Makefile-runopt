@@ -1,0 +1,16 @@
+# Makefile-runopt
+#----------------------------------------------------------------------------------------
+#
+#  Project: ParserGen 1.00
+#
+#  License: Boost Software License - Version 1.0 - August 17th, 2003
+#
+#            see http://www.boost.org/LICENSE_1_0.txt or the local copy
+#
+#  Copyright (c) 2024 Sergey Strukov. All rights reserved.
+#
+#----------------------------------------------------------------------------------------
+
+RUN_OPT = $(TARGET_ROOT)/files/Formula.ddl FormulaParserData $(TARGET_ROOT)/files/Formula.gen.h $(TARGET_ROOT)/files/Formula.gen.cpp
+
+
