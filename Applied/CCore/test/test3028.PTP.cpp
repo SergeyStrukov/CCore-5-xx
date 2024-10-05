@@ -124,7 +124,7 @@ bool Testit<3028>::Main()
 
   engine.showStat();
 
-  PutBinaryFile dev("test3028.bin");
+  PutBinaryFile dev("out/test3028.bin");
 
   dev(recorder);
 
