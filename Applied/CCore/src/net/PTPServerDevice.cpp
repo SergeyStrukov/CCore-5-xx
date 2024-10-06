@@ -400,7 +400,9 @@ void ServerEngine::deactivate_nodel(Slot *slot)
 
 void ServerEngine::inbound_CALL(PacketList &complete_list,XPoint point,const TransId &trans_id,SlotId client_slot,Packet<uint8> packet,PtrLen<const uint8> client_info)
  {
-  TreeAlgo::PrepareIns prepare(active_tree,Key(point,trans_id));
+  Key key(point,trans_id);
+
+  TreeAlgo::PrepareIns prepare(active_tree,key);
 
   if( prepare.found )
     {
@@ -428,7 +430,9 @@ void ServerEngine::inbound_CALL(PacketList &complete_list,XPoint point,const Tra
 
 void ServerEngine::inbound_RECALL(PacketList &complete_list,XPoint point,const TransId &trans_id,SlotId client_slot,RecallNumber recall_number,Packet<uint8> packet,PtrLen<const uint8> client_info)
  {
-  TreeAlgo::PrepareIns prepare(active_tree,Key(point,trans_id));
+  Key key(point,trans_id);
+
+  TreeAlgo::PrepareIns prepare(active_tree,key);
 
   if( Slot *slot=prepare.found )
     {
