@@ -17,6 +17,8 @@ MakeString = $(LIGHT_FORGE_BUILD)/CCore/MakeString/CCore-MakeString.exe
 
 SRC = ../src
 
+.PHONY: all
+
 all: $(SRC)/AppState.TypeDef.gen.h $(SRC)/AppState.Pretext.gen.h $(SRC)/Aspect.TypeDef.gen.h $(SRC)/Aspect.Pretext.gen.h
 
 $(SRC)/AppState.TypeDef.gen.h : AppState.ddl

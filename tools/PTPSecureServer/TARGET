@@ -11,7 +11,7 @@
 
 --------------------------------------------------------------------------------------*/
 
-exe PTPSecureServer : PTPSecureServerProc
+exe PTPSecureServer : PTPSecureServerProc PTPSecureServerDDL
 
 INC = .
 

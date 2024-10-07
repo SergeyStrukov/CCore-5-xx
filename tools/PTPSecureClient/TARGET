@@ -11,7 +11,7 @@
 
 --------------------------------------------------------------------------------------*/
 
-exe PTPSecureClient : Main
+exe PTPSecureClient : Main PTPSecureClientDDL
 
 INC = .
 

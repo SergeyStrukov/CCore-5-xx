@@ -1,7 +1,7 @@
 # Makefile
 #----------------------------------------------------------------------------------------
 #
-#  Project: ContourLab 1.00
+#  Project: PTPSecureServer 1.01
 #
 #  License: Boost Software License - Version 1.0 - August 17th, 2003
 #
@@ -13,18 +13,15 @@
 
 TypeSet = $(LIGHT_FORGE_BUILD)/CCore/DDLTypeSet/CCore-DDLTypeSet.exe
 
-MakeString = $(LIGHT_FORGE_BUILD)/CCore/MakeString/CCore-MakeString.exe
-
 SRC = ../src
+
+INC = ../inc
 
 .PHONY: all
 
-all: $(SRC)/Contour.TypeDef.gen.h $(SRC)/Contour.Pretext.gen.h
+all: $(INC)/Config.type.h
 
-$(SRC)/Contour.TypeDef.gen.h : Contour.ddl
-	$(TypeSet) Contour.ddl $(SRC)/Contour.TypeDef.gen.h $(SRC)/Contour.TypeSet.gen.h
-
-$(SRC)/Contour.Pretext.gen.h : Contour.ddl
-	$(MakeString) -s Contour.ddl $(SRC)/Contour.Pretext.gen.h
+$(INC)/Config.type.h : PTPSecureConfig.types.ddl
+	$(TypeSet) PTPSecureConfig.types.ddl $(INC)/Config.type.h $(SRC)/Config.typeset.h
 
 #----------------------------------------------------------------------------------------
