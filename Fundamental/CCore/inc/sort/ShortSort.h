@@ -133,7 +133,7 @@ struct ShortSort
    }
  };
 
-template <class Ran,SortContextType<Ran> Ctx>
+template <RanType Ran,SortContextType<Ran> Ctx>
 void ShortSort<Ran,Ctx>::Sort2(Ran a,Ran b,Ctx ctx)
  {
   Used(ctx);
@@ -141,7 +141,7 @@ void ShortSort<Ran,Ctx>::Sort2(Ran a,Ran b,Ctx ctx)
   if( ctx.less(b,a) ) ctx.swap(b,a);
  }
 
-template <class Ran,SortContextType<Ran> Ctx>
+template <RanType Ran,SortContextType<Ran> Ctx>
 void ShortSort<Ran,Ctx>::Sort3(Ran a,Ran b,Ran c,Ctx ctx)
  {
   Used(ctx);
@@ -170,7 +170,7 @@ void ShortSort<Ran,Ctx>::Sort3(Ran a,Ran b,Ran c,Ctx ctx)
     }
  }
 
-template <class Ran,SortContextType<Ran> Ctx>
+template <RanType Ran,SortContextType<Ran> Ctx>
 void ShortSort<Ran,Ctx>::Sort4(Ran a,Ran b,Ran c,Ran d,Ctx ctx)
  {
   Used(ctx);
@@ -205,7 +205,7 @@ void ShortSort<Ran,Ctx>::Sort4(Ran a,Ran b,Ran c,Ran d,Ctx ctx)
     }
  }
 
-template <class Ran,SortContextType<Ran> Ctx>
+template <RanType Ran,SortContextType<Ran> Ctx>
 void ShortSort<Ran,Ctx>::Sort5(Ran a,Ran b,Ran c,Ran d,Ran e,Ctx ctx)
  {
   Used(ctx);
