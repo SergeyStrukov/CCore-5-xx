@@ -68,6 +68,7 @@ NOWARN = -Wno-non-virtual-dtor \
          -Wno-misleading-indentation \
          -Wno-inaccessible-base \
          -Wno-array-bounds \
+         -Wno-stringop-overread \
 
 
 CCINC = -I/usr/include/freetype2
