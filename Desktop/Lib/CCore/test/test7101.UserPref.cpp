@@ -17,6 +17,9 @@
 
 #include <CCore/inc/video/UserPreference.h>
 
+#include <CCore/inc/video/HomeFile.h>
+#include <CCore/inc/video/DesktopKey.h>
+
 namespace App {
 
 /* Testit<7101> */ 

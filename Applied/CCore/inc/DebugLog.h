@@ -37,10 +37,11 @@ class DebugLog : NoCopy
    ~DebugLog();
 
    template <class ... TT>
-   void operator () (const char *format,const TT && ... tt)
+   void operator () (const char *format,const TT & ... tt)
     {
      Printf(out,format,tt...);   
 
+     out.put('\n'); 
      out.flush();
     }
  };

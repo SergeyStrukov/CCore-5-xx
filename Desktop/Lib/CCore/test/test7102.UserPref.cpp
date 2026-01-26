@@ -125,7 +125,11 @@ bool Testit<7102>::Main()
 
   DDL::FileEngine<FileName,FileToMem> engine(eout);
 
+  Printf(Con,"process #;\n",home_file.get());
+
   auto result=engine.process(home_file.get(),Pretext());
+
+  Printf(Con,"done\n");
 
   for(const auto &res : result.eval->const_table )
     {
