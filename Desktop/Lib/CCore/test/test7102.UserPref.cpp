@@ -25,15 +25,11 @@
 
 namespace App {
 
+/* Testit<7102> */ 
+
 namespace Private_7102 {
 
-
-} // namespace Private_7102
- 
-using namespace Private_7102; 
- 
-/* Testit<7101> */ 
-static StrLen Pretext()
+StrLen Pretext()
  {
   return
 "type Bool = uint8 ;"
@@ -110,8 +106,12 @@ static StrLen Pretext()
 " };"_c;
  }
 
+} // namespace Private_7102
+ 
+using namespace Private_7102; 
+ 
 template<>
-const char *const Testit<7102>::Name="Test7102 UserPref";
+const char *const Testit<7102>::Name="Test7102 UserPref DDL";
 
 template<>
 bool Testit<7102>::Main() 
